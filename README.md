@@ -1,7 +1,9 @@
-Final Project for Oklahoma Christian 2025 Programming Languages - Create an Interpreted Language
+# Final Project for Oklahoma Christian 2025 Programming Languages - Create an Interpreted Language
+
 CREDIT - https://www.youtube.com/watch?v=A3gTw1ZkeK0&pp=ygUHI2RveHRzbA%3D%3D "Making a Programming Language & Interpreter in under 10 minutes!" by bvdl.io 
 Video is used for a large portion of logic and initial code. Minor functionality built atop it to accomplish example programs.
 
+# Language Usage and Information
 run python PLInterpreter.py <fileName> to run the interpreter on a text file.
 The programming language itself is stack-based. Push and pop are used within certain functions. Conditional and unconditional jumps can be used, with section headers named SECTION <name>
 ADD and SUB take 2 values from the stack and push one back
