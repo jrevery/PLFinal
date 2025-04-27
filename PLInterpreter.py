@@ -118,7 +118,7 @@ while program[pc] != "STOP":
     elif opcode == "PRINT":
         string_literal = program[pc]
         pc += 1
-        if string_literal == "/top":
+        if string_literal == "/TOP":
             print(str(stack.top()))
         else:
             print(string_literal)
@@ -178,7 +178,7 @@ while program[pc] != "STOP":
     elif opcode == "PRINTINLINE":
         string_literal = program[pc]
         pc += 1
-        if string_literal == "/top":
+        if string_literal == "/TOP":
             print(str(stack.top()), end="")
         else:
             print(string_literal, end="")

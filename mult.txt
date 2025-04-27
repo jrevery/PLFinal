@@ -36,8 +36,8 @@ PRINT Your result is 0
 JUMP END
 
 SECTION RESULT
-//top is currently loop counter, pop off to get result
+//TOP is currently loop counter, pop off to get result
 POP
-PRINT /top
+PRINT /TOP
 SECTION END
 STOP
