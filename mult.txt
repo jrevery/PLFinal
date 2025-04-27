@@ -1,0 +1,43 @@
+PRINT Please enter the multiplier
+READ NUM
+JUMPEQ0 ZERO
+JUMPLT0 ERROR
+
+//for repeated addition
+DUPLICATE
+STORE 1
+
+PRINT Please enter the multiplicand
+READ NUM
+JUMPEQ0 ZERO
+JUMPLT0 ERROR
+//for addition counters
+
+STORE 2
+
+SECTION SETUPMULT
+UNSTORE 2
+PUSH 1
+SUB
+JUMPEQ0 RESULT
+STORE 2
+UNSTORE 1
+DUPLICATE
+STORE 1
+ADD
+JUMP SETUPMULT
+
+SECTION ERROR
+PRINT One or more numbers is invalid. Please enter positive integers
+JUMP END
+
+SECTION ZERO
+PRINT Your result is 0
+JUMP END
+
+SECTION RESULT
+//top is currently loop counter, pop off to get result
+POP
+PRINT /top
+SECTION END
+STOP

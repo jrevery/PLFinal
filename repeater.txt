@@ -1,0 +1,26 @@
+PRINT Please enter the string you want repeated
+READ TEXT
+
+
+PRINT Please enter the number of times you want it repeated
+READ NUM
+JUMPEQ0 END
+JUMPLT0 ERROR
+//for addition counters
+
+STORE 1
+
+SECTION REPEAT
+UNSTORE 1
+JUMPEQ0 END
+PUSH 1
+SUB
+STORE 1
+PRINT /top
+JUMP REPEAT
+
+SECTION ERROR
+PRINT Invalid loop counter entered
+
+SECTION END
+STOP

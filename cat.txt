@@ -1,0 +1,3 @@
+READ TEXT
+PRINT /top
+STOP
