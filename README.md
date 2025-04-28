@@ -1,24 +1,47 @@
 # Final Project for Oklahoma Christian 2025 Programming Languages - Create an Interpreted Language
 
-CREDIT - https://www.youtube.com/watch?v=A3gTw1ZkeK0&pp=ygUHI2RveHRzbA%3D%3D "Making a Programming Language & Interpreter in under 10 minutes!" by bvdl.io. 
+Credit: [Making a Programming Language & Interpreter in under 10 minutes!](https://www.youtube.com/watch?v=A3gTw1ZkeK0) by bvdl.io.  
 
 Video is used for a large portion of logic and initial code. Minor functionality built atop it to accomplish example programs.
 
 # Language Usage and Information
-run python PLInterpreter.py <fileName> to run the interpreter on a text file.
+run ```python PLInterpreter.py <fileName>``` to run the interpreter on a text file.
 
-The programming language itself is stack-based. Push and pop are used within certain functions. Conditional and unconditional jumps can be used, with section headers named SECTION <name>
+The programming language itself is stack-based.
 
-ADD and SUB take 2 values from the stack and push one back
+```PUSH``` and ```POP``` can be used to add or remove an element from the stack, they are also used within certain functions.
 
-PRINT and READ can be used for I/O. With READ you have to specify if it is a NUM or TEXT you're expecting Really useful PRINT /TOP will print the top value from the stack without popping. (you can also use PRINTINLINE for printing on the same line)
+```JUMPGT0``` is a conditional jump for if the top value of the stack is greater than 0
 
-STORE is a size-4 array used for holding values outside of the stack, reminiscent of registers in assembly. you can store the top value from the stack with STORE <position 1-4> and load it back onto the stack by using UNSTORE <position 1-4>
+```JUMPLT0``` is for if the value is less than 0
 
-DUPLICATE pushes the top value from the stack onto it again
+```JUMPEQ0``` is for if the value equals zero
 
-lastly, STRLEN takes a string and pushes its length onto the stack, and CHARCONVERT pushes each character of a string onto the stack (probably only useful for character counting and string reversing)
+```JUMP``` will always jump, regardless of value
 
-Lastly, finish each program with STOP
+```SECTION <name>``` provides the labels for jumping
+
+
+```ADD``` and ```SUB``` take 2 values from the stack and push one back after arithmetic
+
+
+```READ``` can be used for user input. For reading, use ```READ NUM``` or ```READ TEXT``` to explicitly define what kind of data you expect.
+
+```PRINT``` will print a value to the console. ```PRINT /TOP``` prints the top value from the stack without popping. ```PRINTINLINE``` prints without line carriage
+
+
+Store is a size-4 array used for holding values outside of the stack, reminiscent of registers in assembly. 
+
+```STORE <1-4>``` Stores the top value from the stack into a specified location
+
+```UNSTORE <1-4>``` Loads the value from the store back onto the stack, default 0 if empty
+
+```DUPLICATE``` pushes the top value from the stack onto it again
+
+```STRLEN``` takes a string and pushes its length onto the stack
+
+```CHARCONVERT``` pushes each character of a string onto the stack (probably only useful for character counting and string reversing)
+
+```STOP``` indicates the end of a program
 
 Example programs are attached along with PLInterpreter.py 
